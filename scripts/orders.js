@@ -2,7 +2,6 @@ import { addToCart, calculateCartQuantity, cart } from "../data/cart.js";
 import { orders } from "../data/orders.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
-import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 async function loadPage() {
   await loadProductsFetch();
