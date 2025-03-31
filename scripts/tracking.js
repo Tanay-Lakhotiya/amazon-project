@@ -1,3 +1,4 @@
+import { calculateCartQuantity } from "../data/cart.js";
 import { getorder } from "../data/orders.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -55,6 +56,10 @@ async function loadPage() {
   `;
 
   document.querySelector('.js-order-tracking').innerHTML = trackingHTML;
+
+  const cartQuantity = calculateCartQuantity();
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
 loadPage();

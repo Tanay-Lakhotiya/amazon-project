@@ -1,4 +1,4 @@
-import { addToCart, cart } from "../data/cart.js";
+import { addToCart, calculateCartQuantity, cart } from "../data/cart.js";
 import { orders } from "../data/orders.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
@@ -92,6 +92,9 @@ async function loadPage() {
       }, 2000);
     })
   });
+
+  const cartQuantity = calculateCartQuantity();
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
 loadPage();
